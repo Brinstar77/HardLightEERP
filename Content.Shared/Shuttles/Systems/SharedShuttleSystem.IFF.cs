@@ -41,10 +41,42 @@ public abstract partial class SharedShuttleSystem
             return null;
         }
 
-        // Frontier
-        var suffix = component != null ? GetServiceFlagsSuffix(component.ServiceFlags) : string.Empty;
+        // Get the company information if available
+        Color? companyColor = null;
+        string? companyName = null;
+        
+        if (TryComp<CompanyComponent>(gridUid, out var companyComp) && !string.IsNullOrEmpty(companyComp.CompanyName))
+        {
+            if (IoCManager.Resolve<IPrototypeManager>().TryIndex<CompanyPrototype>(companyComp.CompanyName, out var prototype))
+            {
+                // Don't include "None" companies in the IFF label
+                if (prototype.ID != "None")
+                {
+                    companyName = prototype.Name;
+                    companyColor = prototype.Color;
+                }
+            }
+            else
+            {
+                // For unknown companies, still check if it's not "None"
+                if (companyComp.CompanyName != "None")
+                {
+                    companyName = companyComp.CompanyName;
+                    companyColor = Color.Yellow;
+                }
+            }
+        }
 
-        return string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName + suffix;
+        var labelText = string.IsNullOrEmpty(entName) ? Loc.GetString("shuttle-console-unknown") : entName;
+        
+        // Add company info if available
+        if (companyName != null && companyColor != null)
+        {
+            // Return a formatted label that the client can parse properly
+            return $"{labelText}\n{companyName}";
+        }
+
+        return labelText;
     }
 
     /// <summary>

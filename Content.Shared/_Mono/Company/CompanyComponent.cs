@@ -2,7 +2,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Company;
+namespace Content.Shared._Mono.Company;
 
 /// <summary>
 /// Component that represents a player's affiliated company.

@@ -15,6 +15,7 @@
 // SPDX-License-Identifier: MPL-2.0
 
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Roles;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Content.Shared.Humanoid.Prototypes; // DeltaV - Trait species hiding
@@ -25,7 +26,7 @@ namespace Content.Shared.Traits;
 /// Describes a trait.
 /// </summary>
 [Prototype]
-public sealed partial class TraitPrototype : IPrototype
+public sealed partial class TraitPrototype : IPrototype, IComparable<TraitPrototype>
 {
     [ViewVariables]
     [IdDataField]
@@ -116,4 +117,19 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public List<string>? RemoveLanguagesUnderstood { get; private set; } = default!;
     // Einstein Engines - Language end
+
+    /// <summary>
+    ///     Requirements for this trait to be selectable.
+    /// </summary>
+    [DataField]
+    public List<JobRequirement> Requirements { get; private set; } = new();
+
+    /// <summary>
+    ///     Comparison for sorting traits by cost.
+    /// </summary>
+    public int CompareTo(TraitPrototype? other)
+    {
+        if (other == null) return 1;
+        return Cost.CompareTo(other.Cost);
+    }
 }

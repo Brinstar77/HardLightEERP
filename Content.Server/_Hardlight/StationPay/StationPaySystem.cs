@@ -64,7 +64,7 @@ public sealed class StationPaySystem : EntitySystem
          * we also don't have to do any complex bookkeeping
          */
         // SubscribeLocalEvent<MindRemovedMessage>(OnMindRemoved);
-        Subs.CVar(_cfg, CCVars.GameStationPayoutLength, time => PayoutDelay = (int)time.TotalSeconds, true);
+        Subs.CVar(_cfg, CCVars.GameStationPayoutDelay, time => PayoutDelay = (int)time.TotalSeconds, true);
     }
 
     private void OnRunLevelChanged(GameRunLevelChangedEvent ev)

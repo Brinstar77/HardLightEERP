@@ -401,6 +401,6 @@ public sealed partial class CCVars
     /// <summary>
     /// How long a job must work to receive their payment. Hardlight CVar.
     /// </summary>
-    public static readonly CVarDef<TimeSpan> GameStationPayoutLength =
-        CVarDef.Create("game.station_payout_length", TimeSpan.FromMinutes(20), CVar.SERVERONLY);
+    public static readonly CVarDef<TimeSpan> GameStationPayoutDelay =
+        CVarDef.Create("game.station_payout_delay", TimeSpan.FromMinutes(20), CVar.SERVERONLY);
 }

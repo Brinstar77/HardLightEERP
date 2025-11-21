@@ -791,6 +791,13 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                         compMap.Remove("MainDiscipline");
                     }
 
+                    // Battery: reset charge to 0
+                    if (typeName == "Battery")
+                    {
+                        compMap["currentCharge"] = new ValueDataNode("0");
+                        compMap["CurrentCharge"] = new ValueDataNode("0");
+                    }
+
                     newComps.Add(compMap);
                 }
 

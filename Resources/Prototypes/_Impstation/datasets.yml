@@ -107,7 +107,7 @@
   - Mothroachburger
   - Amanita Jelly
   - Spicy Rock Pizza
-  
+
 - type: dataset
   id: MoodDrinkables
   values:
@@ -123,7 +123,7 @@
   - Hippie's Delight
   #- Tayquila
   - Three Mile Island Iced Tea
-  
+
 - type: dataset
   id: MoodHolidays
   values:
@@ -136,7 +136,7 @@
   - Intergalactic Hug A Robot Day
   - Labor Day
   - Fall of the Twin Trees Day
-  - NT Corporate Mindfulness Day
+  - CC Corporate Mindfulness Day
   - Steven's Barmitzvah
   - Silicon Awareness Day
   - Logistics Improvement Day

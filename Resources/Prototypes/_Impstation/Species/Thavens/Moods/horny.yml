@@ -1,0 +1,61 @@
+﻿- type: dataset
+  id: ThavenMoodsHorny
+  values:
+  - BirthdaySuit
+  - FreakySpeak
+  - ServileHands
+  - HeatMagnet
+  - ObedientFreak
+  - StationPet
+  - DragItOut
+  - MyPrecious
+
+# Jumpsuits are uncomfortable, your skin needs to breathe. You should strive to be nude at all times.
+- type: thavenMood
+  id: BirthdaySuit
+  moodName: thaven-mood-birthday-suit-name
+  moodDesc: thaven-mood-birthday-suit-desc
+
+# Innuendo is the pinnacle of humour, conversation, and chivalry. Make as many as possible.
+- type: thavenMood
+  id: FreakySpeak
+  moodName: thaven-mood-freaky-speak-name
+  moodDesc: thaven-mood-freaky-speak-desc
+
+# Your hands are desperate to be filled. Find someone you can hold, pamper, stroke, or otherwise touch.
+- type: thavenMood
+  id: ServileHands
+  moodName: thaven-mood-servile-hands-name
+  moodDesc: thaven-mood-servile-hands-desc
+
+# You're desperate for the warmth of another person on your body or inside it. Avoid straying from touching distance.
+- type: thavenMood
+  id: HeatMagnet
+  moodName: thaven-mood-heat-magnet-name
+  moodDesc: thaven-mood-heat-magnet-desc
+
+# Being given orders is Right. If someone speaks with authority and confidence, obey. Find someone to command you.
+- type: thavenMood
+  id: ObedientFreak
+  moodName: thaven-mood-obedient-freak-name
+  moodDesc: thaven-mood-obedient-freak-desc
+
+# You yearn to be called a good pet, and to be pampered like you deserve. Find someone to be your owner.
+- type: thavenMood
+  id: StationPet
+  moodName: thaven-mood-station-pet-name
+  moodDesc: thaven-mood-station-pet-desc
+
+# It's "in" to dress in clothing opposite to one's gender. Anyone not in dressed ambiguously or in drag looks like they're in the wrong era.
+- type: thavenMood
+  id: DragItOut
+  moodName: thaven-mood-drag-it-out-name
+  moodDesc: thaven-mood-drag-it-out-desc
+
+# You feel intense jealousy when someone attractive or important to you is at even the slightest risk of being taken from you.
+- type: thavenMood
+  id: MyPrecious
+  moodName: thaven-mood-my-precious-name
+  moodDesc: thaven-mood-my-precious-desc
+
+#

@@ -4,7 +4,7 @@
   description: job-description-medical-quadborg
   playTimeTracker: JobMedicalQuadBorg
   requirements:
-    - !type:CharacterOverallTimeRequirement
+    - !type:OverallPlaytimeRequirement
       min: 21600 #6 hrs floof
     - !type:DepartmentTimeRequirement
       department: Medical
@@ -20,7 +20,7 @@
   description: job-description-service-quadborg
   playTimeTracker: JobServiceQuadBorg
   requirements:
-    - !type:CharacterOverallTimeRequirement
+    - !type:OverallPlaytimeRequirement
       min: 21600 #6 hrs floof
   canBeAntag: false
   icon: JobIconServiceBorg
@@ -33,7 +33,7 @@
   description: job-description-salvage-quadborg
   playTimeTracker: JobSalvageQuadBorg
   requirements:
-    - !type:CharacterOverallTimeRequirement
+    - !type:OverallPlaytimeRequirement
       min: 21600 #6 hrs floof
     - !type:DepartmentTimeRequirement
       department: Cargo
@@ -49,7 +49,7 @@
   description: job-description-security-quadborg
   playTimeTracker: JobSecurityQuadBorg
   requirements:
-    - !type:CharacterOverallTimeRequirement
+    - !type:OverallPlaytimeRequirement
       min: 21600 #6 hrs floof
     - !type:DepartmentTimeRequirement
       department: Security
@@ -65,7 +65,7 @@
   description: job-description-Engineering-quadborg
   playTimeTracker: JobEngineeringQuadBorg
   requirements:
-    - !type:CharacterOverallTimeRequirement
+    - !type:OverallPlaytimeRequirement
       min: 21600 #6 hrs floof
     - !type:DepartmentTimeRequirement
       department: Engineering

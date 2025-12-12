@@ -110,10 +110,6 @@
 
 # Lathe
 
-- type: sinkPort
-  id: AutomationSlotPaper
-  name: signal-port-name-automation-slot-paper
-  description: signal-port-description-automation-slot-paper
 
 - type: sinkPort
   id: FaxCopy

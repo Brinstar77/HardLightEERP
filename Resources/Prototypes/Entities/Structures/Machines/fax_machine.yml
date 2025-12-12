@@ -64,10 +64,6 @@
       Paper: !type:ContainerSlot
   - type: AutomationSlots # Goobstation
     slots:
-    - !type:AutomatedItemSlot
-      input: AutomationSlotPaper
-      output: AutomationSlotPaper
-      slotId: Paper
     - !type:AutomatedPorts
       sinks:
       - FaxCopy

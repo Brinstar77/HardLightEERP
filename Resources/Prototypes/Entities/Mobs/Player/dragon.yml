@@ -237,7 +237,7 @@
       groups:
         Brute: 12
   - type: Devourer
-    foodPreference: None
+    null
 
 - type: entity
   id: ActionSpawnRift

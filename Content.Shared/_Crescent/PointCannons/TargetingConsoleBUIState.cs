@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Shared.Crescent.Radar;
 using Content.Shared.Shuttles.BUIStates;
 using Robust.Shared.Serialization;
 
@@ -9,18 +8,18 @@ namespace Content.Shared.PointCannons;
 public sealed class TargetingConsoleBoundUserInterfaceState : BoundUserInterfaceState
 {
     public NavInterfaceState NavState;
-    public IFFInterfaceState IFFState;
+    // public IFFInterfaceState IFFState; // TODO: Implement IFF system
     public List<string>? CannonGroups;
     public List<NetEntity>? ControlledCannons;
 
     public TargetingConsoleBoundUserInterfaceState(
         NavInterfaceState navState,
-        IFFInterfaceState iffState,
+        // IFFInterfaceState iffState,
         List<string>? groups,
         List<NetEntity>? controlled)
     {
         NavState = navState;
-        IFFState = iffState;
+        // IFFState = iffState;
         CannonGroups = groups;
         ControlledCannons = controlled;
     }

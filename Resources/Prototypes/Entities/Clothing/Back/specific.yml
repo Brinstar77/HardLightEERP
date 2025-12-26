@@ -112,14 +112,6 @@
     size: Ginormous
   - type: Clothing
     slots: BACK
-  - type: ExtraHandsEquipment
-    hands:
-      # middle hands to prevent overlapping inhand sprites
-      # This can be changed once we have per-hand displacement maps
-      extra_hand_1:
-        location: Middle
-      extra_hand_2:
-        location: Middle
 
 - type: entity
   parent: ClothingBackpack

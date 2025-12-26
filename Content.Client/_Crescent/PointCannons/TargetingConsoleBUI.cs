@@ -8,7 +8,7 @@ using Content.Shared.Weapons.Ranged.Events;
 using OpenToolkit.GraphicsLibraryFramework;
 using Content.Client.Weapons.Ranged.Systems;
 
-namespace Content.Client.PointCannons;
+namespace Content.Client._Crescent.PointCannons;
 
 [UsedImplicitly]
 public sealed class TargetingConsoleBoundUserInterface : BoundUserInterface
@@ -59,21 +59,14 @@ public sealed class TargetingConsoleBoundUserInterface : BoundUserInterface
         _window.OpenCentered();
         _window.OnClose += Close;
 
+        // ShuttleNavControl only has OnRadarClick, not mouse move or release events
         _window.Radar.OnRadarClick += (coords) =>
         {
             _coords = _formSys.ToMapCoordinates(coords).Position;
             SendMessage(new TargetingConsoleFireMessage(_coords));
             _isFiring = true;
-        };
-
-        _window.Radar.OnRadarRelease += () =>
-        {
-            _isFiring = false;
-        };
-
-        _window.Radar.OnRadarMouseMove += (coords) =>
-        {
-            _coords = _formSys.ToMapCoordinates(coords).Position;
+            // Auto-stop firing after a short delay since we don't have release event
+            Timer.Spawn(100, () => _isFiring = false);
         };
 
         _window.OnCannonGroupChange += (groupName) =>

@@ -293,7 +293,7 @@
 
 - type: entity
   parent: [ Welder, BaseXenoborgContraband ]
-  id: RefuelingWelder
+  id: RefuelingWelderXenoborg
   name: refuling welding tool
   description: "An slow welder that can refuel itself over time."
   components:

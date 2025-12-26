@@ -1,0 +1,52 @@
+# HTN system for turrets targeting grids with ShuttleDeedComponent
+
+# Utility query for finding nearby grids with ShuttleDeed
+- type: utilityQuery
+  id: NearbyShuttleDeedGridTargets
+  query:
+  - !type:NearbyShuttleDeedGridsQuery
+    range: 2000
+    blacklist:
+      tags:
+      - ShuttleAIIgnore
+  considerations:
+  - !type:TargetInverseDistanceCon
+    curve: !type:QuadraticCurve
+      slope: 1
+      exponent: 1
+      yOffset: 0
+      xOffset: 0
+
+# Main compound for turrets that target ShuttleDeed grids
+- type: htnCompound
+  id: ShuttleDeedTurretCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: NearbyShuttleDeedGridTargets
+    - !type:HTNCompoundTask
+      task: ShuttleDeedTurretAttackCompound
+
+# Attack compound - fire at target using ship weapons system
+- type: htnCompound
+  id: ShuttleDeedTurretAttackCompound
+  branches:
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: TargetCoordinates
+    tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:ShipFireGunsOperator
+        shutdownState: TaskFinished
+        removeKeyOnFinish: false
+        leadingAccuracy: 0.6
+        requireAnchored: false
+        maxTargetingRange: 2000
+        targetKey: TargetCoordinates
+      services:
+      - !type:UtilityService
+        id: TargetsService
+        proto: NearbyShuttleDeedGridTargets
+        key: Target
+        coordinatesKey: TargetCoordinates

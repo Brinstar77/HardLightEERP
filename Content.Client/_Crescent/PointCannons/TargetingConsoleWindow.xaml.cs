@@ -8,7 +8,7 @@ using Content.Client.Shuttles.UI;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 
-namespace Content.Client.PointCannons;
+namespace Content.Client._Crescent.PointCannons;
 
 [GenerateTypedNameReferences]
 public sealed partial class TargetingConsoleWindow : FancyWindow, IComputerWindow<ShuttleBoundUserInterfaceState>
@@ -25,7 +25,7 @@ public sealed partial class TargetingConsoleWindow : FancyWindow, IComputerWindo
     public void UpdateState(TargetingConsoleBoundUserInterfaceState state)
     {
         NavRadar.UpdateState(state.NavState);
-        NavRadar.UpdateState(state.IFFState);
+        // NavRadar.UpdateState(state.IFFState);
 
         if (state.CannonGroups != null)
             UpdateGroupSelector(state.CannonGroups);

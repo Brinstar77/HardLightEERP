@@ -73,7 +73,7 @@
   - type: XenoborgsRule
   - type: RuleGrids
   - type: GameRule
-    minPlayers: 40
+    minPlayers: 0
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/mothership.yml
   - type: AntagMultipleRoleSpawner
@@ -96,5 +96,3 @@
       - MindRoleXenoborg
       min: 4
       max: 4
-  - type: DynamicRuleCost
-    cost: 200

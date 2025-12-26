@@ -159,9 +159,6 @@
         },
         {
             "name":"xenoborg-tool-module"
-        },
-        {
-            "name": "select-type"
         }
     ]
 }

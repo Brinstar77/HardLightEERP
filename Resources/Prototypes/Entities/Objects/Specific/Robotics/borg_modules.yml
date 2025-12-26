@@ -1330,51 +1330,8 @@
     - state: xenoborg_generic
     - state: icon-xenoborg-basic
   - type: ItemBorgModule
-    hands:
-    - item: DoorRemoteXenoborg
-    - hand:
-        emptyRepresentative: MMIFilled
-        emptyLabel: borg-slot-brains-empty
-        whitelist:
-          components:
-          - Brain
-          - BorgBrain
-    - hand:
-        emptyRepresentative: XenoborgModuleBasic
-        emptyLabel: borg-slot-modules-empty
-        whitelist:
-          components:
-          - BorgModule
-    - hand:
-        emptyRepresentative: BorgModuleConstructionMaterialPlaceholder
-        emptyLabel: borg-slot-construction-empty
-        whitelist:
-          tags:
-          - ConstructionMaterial
-    - hand:
-        emptyRepresentative: PowerCellHigh
-        emptyLabel: borg-slot-powercell-empty
-        whitelist:
-          components:
-          - PowerCell
-  - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-module-module }
-
-# mothership module
-- type: entity
-  parent: [ BaseXenoborgModuleGeneric, BaseProviderBorgModule, BaseXenoborgContraband ]
-  id: MothershipModule
-  name: mothership module
-  description: A module that helps the mothership borg brains and install other modules.
-  components:
-  - type: Tag
-    tags:
-    - MothershipModule
-  - type: Sprite
-    layers:
-    - state: xenoborg_generic
-    - state: icon-xenoborg-basic
-  - type: ItemBorgModule
+    moduleId: Mothership
+    items: []
     hands:
     - item: DoorRemoteXenoborg
     - hand:
@@ -1417,6 +1374,8 @@
     - state: xenoborg_generic
     - state: icon-xenoborg-basic
   - type: ItemBorgModule
+    moduleId: XenoborgBasic
+    items: []
     hands:
     - hand:
         emptyRepresentative: BorgModuleConstructionMaterialPlaceholder
@@ -1441,6 +1400,7 @@
     - state: xenoborg_generic
     - state: icon-xenoborg-tools
   - type: ItemBorgModule
+    moduleId: XenoborgTool
     items:
     - Crowbar
     - Wrench
@@ -1462,6 +1422,7 @@
     - state: xenoborg_engi
     - state: icon-xenoborg-access-breaker
   - type: ItemBorgModule
+    moduleId: XenoborgAccessBreaker
     items:
     - AccessBreaker
   - type: BorgModuleIcon
@@ -1478,6 +1439,7 @@
     - state: xenoborg_engi
     - state: icon-xenoborg-fire-extinguisher
   - type: ItemBorgModule
+    moduleId: XenoborgFireExtinguisher
     items:
     - SelfRechargingFireExtinguisher
   - type: BorgModuleIcon
@@ -1494,6 +1456,7 @@
     - state: xenoborg_heavy
     - state: icon-xenoborg-jammer
   - type: ItemBorgModule
+    moduleId: XenoborgJammer
     items:
     - XenoborgRadioJammer
   - type: BorgModuleIcon
@@ -1510,6 +1473,7 @@
     - state: xenoborg_heavy
     - state: icon-xenoborg-laser
   - type: ItemBorgModule
+    moduleId: XenoborgLaser
     items:
     - XenoborgLaserGun
   - type: BorgModuleIcon
@@ -1526,6 +1490,7 @@
     - state: xenoborg_heavy
     - state: icon-xenoborg-laser2
   - type: ItemBorgModule
+    moduleId: XenoborgHeavyLaser
     items:
     - XenoborgHeavyLaserGun
   - type: BorgModuleIcon
@@ -1542,6 +1507,8 @@
     - state: xenoborg_scout
     - state: icon-xenoborg-space-movement
   - type: ItemBorgModule
+    moduleId: XenoborgSpaceMovement
+    items: []
     hands:
     - item: HandheldGPSBasic
     - item: HandHeldMassScannerBorg
@@ -1563,6 +1530,7 @@
     - state: xenoborg_scout
     - state: icon-xenoborg-sword
   - type: ItemBorgModule
+    moduleId: XenoborgSword
     items:
     - KukriKnife
     - JetpackXenoborg
@@ -1580,6 +1548,7 @@
     - state: xenoborg_scout
     - state: icon-xenoborg-sword2
   - type: ItemBorgModule
+    moduleId: XenoborgEnergySword
     items:
     - EnergyDaggerLoudBlue
     - JetpackXenoborg
@@ -1597,6 +1566,7 @@
     - state: xenoborg_stealth
     - state: icon-xenoborg-hypo
   - type: ItemBorgModule
+    moduleId: XenoborgHypo
     items:
     - NocturineHypo
   - type: BorgModuleIcon
@@ -1613,6 +1583,7 @@
     - state: xenoborg_stealth
     - state: icon-xenoborg-projector
   - type: ItemBorgModule
+    moduleId: XenoborgChameleonProjector
     items:
     - ChameleonProjector
   - type: BorgModuleIcon
@@ -1629,6 +1600,7 @@
     - state: xenoborg_stealth
     - state: icon-xenoborg-cloak
   - type: ItemBorgModule
+    moduleId: XenoborgCloakDevice
     items:
     - CloakingDevice
   - type: BorgModuleIcon
@@ -1645,6 +1617,7 @@
     - state: xenoborg_stealth
     - state: icon-xenoborg-cloak2
   - type: ItemBorgModule
+    moduleId: XenoborgSuperCloakDevice
     items:
     - SuperCloakingDevice
   - type: BorgModuleIcon

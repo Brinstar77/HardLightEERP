@@ -1,4 +1,7 @@
+using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
@@ -12,6 +15,8 @@ public sealed partial class ShipTargetingSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly SharedGunSystem _gunSystem = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!;
 
     private EntityQuery<GunComponent> _gunQuery;
     private EntityQuery<PhysicsComponent> _physQuery;
@@ -104,8 +109,10 @@ public sealed partial class ShipTargetingSystem : EntitySystem
 
             targetPos += leadBy * hitTime;
 
-            // TODO: Re-implement when PointCannonSystem is available
-            // _cannon.TryFireCannon(uid, targetPos, gun: gun);
+            // Fire the gun forward (simplified - just shoot in the direction we're facing)
+            var gunXform = Transform(uid);
+            var forwardPos = gunXform.Coordinates.Offset(gunXform.LocalRotation.ToWorldVec() * 50f);
+            _gunSystem.AttemptShoot(uid, uid, gun, forwardPos);
         }
     }
 
@@ -131,15 +138,18 @@ public sealed partial class ShipTargetingSystem : EntitySystem
         ent.Comp.Target = coordinates;
 
         if (checkGuns)
-        {
-            // TODO: Re-implement cannon checking when PointCannonComponent is available
-            // ent.Comp.Cannons.Clear();
-            // var cannons = new HashSet<Entity<PointCannonComponent>>();
-            // _lookup.GetLocalEntitiesIntersecting(shipUid.Value, grid.LocalAABB, cannons);
-            // foreach (var cannon in cannons)
-            // {
-            //     ent.Comp.Cannons.Add(cannon);
-            // }
+        {   //Find all guns on the ship grid with the AIShipWeapon tag
+            ent.Comp.Cannons.Clear();
+            var guns = new HashSet<Entity<GunComponent>>();
+            _lookup.GetGridEntities(shipUid.Value, guns);
+            foreach (var gun in guns)
+            {
+                // Only add guns with the AIShipWeapon tag
+                if (_tagSystem.HasTag(gun, "AIShipWeapon"))
+                {
+                    ent.Comp.Cannons.Add(gun);
+                }
+            }
         }
 
         return ent.Comp;

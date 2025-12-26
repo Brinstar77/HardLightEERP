@@ -4,7 +4,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Label = Robust.Client.UserInterface.Controls.Label;
 
-namespace Content.Client.PointCannons;
+namespace Content.Client._Crescent.PointCannons;
 
 public sealed class AmmoBar : Control
 {

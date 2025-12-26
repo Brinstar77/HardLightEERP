@@ -1057,9 +1057,6 @@
   id: Kidneys
 
 - type: Tag
-  id: Ore
-
-- type: Tag
   id: Packet
 
 - type: Tag

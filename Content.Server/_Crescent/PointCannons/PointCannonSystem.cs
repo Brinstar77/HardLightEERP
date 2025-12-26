@@ -6,7 +6,7 @@ using Content.Server.Popups;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Body.Components;
-using Content.Shared.Crescent.Radar;
+// using Content.Shared.Crescent.Radar;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.PointCannons;
@@ -24,9 +24,9 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using System;
-using Content.Server._Crescent.Hardpoint;
+// using Content.Server._Crescent.Hardpoint;
 using Content.Server.Power.Components;
-using Content.Shared._Crescent.Hardpoints;
+// using Content.Shared._Crescent.Hardpoints;
 using Content.Shared.Communications;
 using Content.Shared.Physics;
 
@@ -45,7 +45,7 @@ public class PointCannonSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly MapSystem _maps = default!;
-    [Dependency] private readonly HardpointSystem _hardpoint = default!;
+    // [Dependency] private readonly HardpointSystem _hardpoint = default!;
 
     public override void Initialize()
     {
@@ -91,7 +91,7 @@ public class PointCannonSystem : EntitySystem
             UnlinkAllCannonsFromConsole(console.Owner, console.Comp);
             LinkAllCannonsToConsole(console.Owner, console.Comp);
         }
-        _hardpoint.QueueHardpointRefresh(gridUid);
+        // _hardpoint.QueueHardpointRefresh(gridUid);
     }
 
     private void UnlinkAllCannonsFromConsole(EntityUid console, TargetingConsoleComponent comp)
@@ -314,14 +314,14 @@ public class PointCannonSystem : EntitySystem
     public void UpdateConsoleState(EntityUid uid, TargetingConsoleComponent console)
     {
         NavInterfaceState navState = _shuttleConSys.GetNavState(uid, _shuttleConSys.GetAllDocks());
-        IFFInterfaceState iffState = _shuttleConSys.GetIFFState(
-            uid,
-            null,
-            console.RegenerateCannons ? null : console.PrevState?.IFFState.Turrets);
+        // IFFInterfaceState iffState = _shuttleConSys.GetIFFState(
+        //     uid,
+        //     null,
+        //     console.RegenerateCannons ? null : console.PrevState?.IFFState.Turrets);
 
         TargetingConsoleBoundUserInterfaceState consoleState = new(
             navState,
-            iffState,
+            // iffState,
             console.RegenerateCannons ? console.CannonGroups.Keys.ToList() : null,
             GetNetEntityList(console.CurrentGroup));
 
@@ -369,35 +369,39 @@ public class PointCannonSystem : EntitySystem
 
         if (form.MapUid == null || !_gunSys.CanShoot(gun))
             return false;
-        if (!TryComp<HardpointAnchorableOnlyComponent>(uid, out var anchorComp))
-            return false;
-        if (anchorComp.anchoredTo is null)
-            return false;
-        if (!TryComp<ApcPowerReceiverComponent>(anchorComp.anchoredTo, out var powerComp))
-            return false;
-        if (!powerComp.Powered)
-            return false;
+        // Commented out - missing HardpointAnchorableOnlyComponent
+        // if (!TryComp<HardpointAnchorableOnlyComponent>(uid, out var anchorComp))
+        //     return false;
+        // if (anchorComp.anchoredTo is null)
+        //     return false;
+        // if (!TryComp<ApcPowerReceiverComponent>(anchorComp.anchoredTo, out var powerComp))
+        //     return false;
+        // if (!powerComp.Powered)
+        //     return false;
         EntityCoordinates entPos = new EntityCoordinates(uid, new Vector2(0, -1));
-        if (!TryComp<HardpointFixedMountComponent>(anchorComp.anchoredTo, out var fixedComp))
-        {
-            Vector2 cannonPos = _formSys.GetWorldPosition(form);
-            _formSys.SetWorldRotation(uid, Angle.FromWorldVec(pos - cannonPos));
-            entPos = new(form.MapUid.Value, pos);
-        }
+        // Commented out - missing HardpointFixedMountComponent
+        // if (!TryComp<HardpointFixedMountComponent>(anchorComp.anchoredTo, out var fixedComp))
+        // {
+        //     Vector2 cannonPos = _formSys.GetWorldPosition(form);
+        //     _formSys.SetWorldRotation(uid, Angle.FromWorldVec(pos - cannonPos));
+        //     entPos = new(form.MapUid.Value, pos);
+        // }
 
-        if (!SafetyCheck(form.LocalRotation - Math.PI / 2, cannon))
-            return false;
+        // Simplified - just shoot forward
+        // if (!SafetyCheck(form.LocalRotation - Math.PI / 2, cannon))
+        //     return false;
         _gunSys.AttemptShoot(uid, uid, gun, entPos);
         return true;
     }
 
     public bool SafetyCheck(Angle ang, PointCannonComponent cannon)
     {
-        foreach ((Angle start, Angle width) in cannon.ObstructedRanges)
-        {
-            if (CrescentHelpers.AngInSector(ang, start, width))
-                return false;
-        }
+        // Commented out - missing CrescentHelpers
+        // foreach ((Angle start, Angle width) in cannon.ObstructedRanges)
+        // {
+        //     if (CrescentHelpers.AngInSector(ang, start, width))
+        //         return false;
+        // }
 
         return true;
     }
@@ -440,30 +444,33 @@ public class PointCannonSystem : EntitySystem
             (Angle start2, Angle width2) = (start0, width0);
 
             //checking whether new sector overlaps with any existing ones and combining them if so
-            List<(Angle, Angle)> overlaps = new();
-            foreach ((Angle start1, Angle width1) in ranges)
-            {
-                if (CrescentHelpers.AngSectorsOverlap(start0, width0, start1, width1))
-                {
-                    (start2, width2) = CrescentHelpers.AngCombinedSector(start2, width2, start1, width1);
-                    overlaps.Add((start1, width1));
-                }
-            }
+            // Commented out - missing CrescentHelpers
+            // List<(Angle, Angle)> overlaps = new();
+            // foreach ((Angle start1, Angle width1) in ranges)
+            // {
+            //     if (CrescentHelpers.AngSectorsOverlap(start0, width0, start1, width1))
+            //     {
+            //         (start2, width2) = CrescentHelpers.AngCombinedSector(start2, width2, start1, width1);
+            //         overlaps.Add((start1, width1));
+            //     }
+            // }
 
-            foreach ((Angle start1, Angle width1) in overlaps)
-            {
-                ranges.Remove((start1, width1));
-            }
-            ranges.Add((start2, width2));
+            // Commented out - missing CrescentHelpers
+            // foreach ((Angle start1, Angle width1) in overlaps)
+            // {
+            //     ranges.Remove((start1, width1));
+            // }
+            // ranges.Add((start2, width2));
         }
 
         Angle maxSpread = gun.MaxAngle + Angle.FromDegrees(10);
         Angle clearance = maxSpread + cannon.ClearanceAngle;
 
-        for (int i = 0; i < ranges.Count; i++)
-        {
-            ranges[i] = (CrescentHelpers.AngNormal(ranges[i].Item1 - clearance / 2), ranges[i].Item2 + clearance);
-        }
+        // Commented out - missing CrescentHelpers
+        // for (int i = 0; i < ranges.Count; i++)
+        // {
+        //     ranges[i] = (CrescentHelpers.AngNormal(ranges[i].Item1 - clearance / 2), ranges[i].Item2 + clearance);
+        // }
 
         return ranges;
     }
@@ -471,7 +478,9 @@ public class PointCannonSystem : EntitySystem
     //delta between cannon's and obstacle's position
     private (Angle, Angle) GetObstacleSector(Vector2 delta)
     {
-        Angle dirAngle = CrescentHelpers.AngNormal(new Angle(delta));
+        // Commented out - missing CrescentHelpers
+        // Angle dirAngle = CrescentHelpers.AngNormal(new Angle(delta));
+        Angle dirAngle = new Angle(delta);
         Vector2 a, b;
 
         //this can be done without ugly conditional below, by rotating tile's square by delta's angle and finding left- and rightmost points,
@@ -512,8 +521,11 @@ public class PointCannonSystem : EntitySystem
             b = delta - Vector2Helpers.Half;
         }
 
-        Angle start = CrescentHelpers.AngNormal(new Angle(a));
-        Angle end = CrescentHelpers.AngNormal(new Angle(b));
+        // Commented out - missing CrescentHelpers
+        // Angle start = CrescentHelpers.AngNormal(new Angle(a));
+        // Angle end = CrescentHelpers.AngNormal(new Angle(b));
+        Angle start = new Angle(a);
+        Angle end = new Angle(b);
         Angle width = Angle.ShortestDistance(start, end);
         if (width < 0)
         {

@@ -132,8 +132,8 @@
         shutdownState: TaskFinished
         removeKeyOnFinish: false
         inRangeMaxSpeed: 0.1
-        range: 250
-        rangeTolerance: 50
+        range: 50
+        rangeTolerance: 5
         alwaysFaceTarget: true
         targetKey: TargetCoordinates
       services:
@@ -156,8 +156,8 @@
         removeKeyOnFinish: false
         alwaysFaceTarget: true
         inRangeMaxSpeed: 1
-        range: 250
-        rangeTolerance: 50
+        range: 50
+        rangeTolerance: 5
         targetKey: TargetCoordinates
     - !type:HTNPrimitiveTask
       operator: !type:ShipFireGunsOperator

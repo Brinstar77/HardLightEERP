@@ -9,6 +9,7 @@ using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Power.EntitySystems; // Mono
 using Content.Server.Shuttles.Components; // Mono
 using Content.Server.Storage.Components;
+using Content.Shared._NF.Shipyard.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
@@ -30,6 +31,7 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
 using Microsoft.Extensions.ObjectPool;
 using Robust.Server.Containers;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
@@ -524,6 +526,26 @@ public sealed class NPCUtilitySystem : EntitySystem
                     }
 
                     entities.Add(consGrid.Value);
+                }
+                break;
+            }
+            case NearbyShuttleDeedGridsQuery deedQuery:
+            {
+                var xform = Transform(owner);
+                var ownGrid = xform.GridUid;
+                var mapCoords = _transform.GetMapCoordinates(xform);
+                
+                foreach (var grid in _lookup.GetEntitiesInRange<MapGridComponent>(mapCoords, deedQuery.Range))
+                {
+                    if (grid == ownGrid ||
+                        !HasComp<ShuttleDeedComponent>(grid) ||
+                        (_transform.GetWorldPosition(grid) - _transform.GetWorldPosition(xform)).Length() > deedQuery.Range ||
+                        _whitelistSystem.IsBlacklistPass(deedQuery.Blacklist, grid))
+                    {
+                        continue;
+                    }
+
+                    entities.Add(grid);
                 }
                 break;
             }

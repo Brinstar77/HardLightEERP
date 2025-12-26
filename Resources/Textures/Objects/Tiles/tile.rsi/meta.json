@@ -244,6 +244,9 @@
             "name": "techfloor"
         },
         {
+            "name": "techfloordark"
+        },
+        {
             "name": "white"
         },
         {
@@ -575,9 +578,6 @@
         },
         {
             "name": "xeno-techmaint"
-        },
-        {
-            "name": "xenoborg-floor"
         },
         {
             "name": "dark-squiggly"

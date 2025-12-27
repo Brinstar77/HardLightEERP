@@ -47,3 +47,33 @@ Entries:
       message: High-Flow atmos devices now work properly.
   id: 7
   time: '2025-12-27T08:38:40.0000000+00:00'
+- author: Durk
+  changes:
+    - type: Add
+      message: Added missing marking localization
+    - type: Tweak
+      message: Increased size of salvage specialist wall locker
+    - type: Tweak
+      message: Changed PDAs/IDs/Headets back to small items
+    - type: Fix
+      message: Various map and shuttle fixes
+    - type: Fix
+      message: Fixed crass knuckles construction graph
+    - type: Fix
+      message: Fixed Forktail sniper
+    - type: Fix
+      message: Fixed the flamethrower case
+    - type: Fix
+      message: Fixed unmarked cigarette packs
+    - type: Fix
+      message: Fixed various Item prices
+    - type: Fix
+      message: Fixed Xeno evolve action throwing an error
+    - type: Fix
+      message: Fixed fortune cookie dataset
+    - type: Remove
+      message: Removed duplicate emotes
+    - type: Remove
+      message: Removed the ability to cuff quadborgs
+  id: 8
+  time: '2025-12-27T08:55:41.0000000+00:00'

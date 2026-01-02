@@ -113,3 +113,13 @@ Entries:
       message: Restored Maxim Hardsuit to Expedition loot tables
   id: 12
   time: '2025-12-31T16:45:51.0000000+00:00'
+- author: Fenndragon
+  changes:
+    - type: Add
+      message: Added Vore
+    - type: Add
+      message: Added kink list
+    - type: Fix
+      message: fixed round logic issues
+  id: 13
+  time: '2026-01-02T23:01:27.0000000+00:00'

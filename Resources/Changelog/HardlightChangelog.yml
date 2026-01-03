@@ -145,3 +145,9 @@ Entries:
       message: Fixed a bunch of guidebook entry organization.
   id: 16
   time: '2026-01-03T01:34:17.0000000+00:00'
+- author: carccborg
+  changes:
+    - type: Tweak
+      message: Characters with the Numb trait no longer scream during surgery.
+  id: 17
+  time: '2026-01-03T01:39:17.0000000+00:00'

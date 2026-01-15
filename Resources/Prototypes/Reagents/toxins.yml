@@ -297,6 +297,10 @@
             Radiation: 3
       - !type:ChemRerollPsionic
         bonusMultiplier: 5
+      - !type:RandomMutation # Funkystation - genetics
+        probability: .02 # Kept low as rad damage already causes mutations. May need to be removed.
+        minMutations: 1
+        maxMutations: 1
 
 - type: reagent
   id: HeartbreakerToxin

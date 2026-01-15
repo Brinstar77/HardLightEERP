@@ -1,4 +1,4 @@
-//Creates a border on the edges of the screen of the specified color and of the specified size (no uniforms yet cause I'm lazy)
+//Fixed wizden's shader
 
 const highp vec4 borderColor = vec4(0.39, 0.58, 0.92, 1.0);
 const highp float borderSize = 55.0; //Pixel size of border

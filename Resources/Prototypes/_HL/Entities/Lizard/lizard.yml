@@ -113,8 +113,7 @@
     staticScale: 0.6
     useTaperSystem: true
     taperOffset: 3
-    texturePath: _HL/Lizard/lizard.rsi
-    textureState: bluesegment
+    texturePath: _HL/Lizard/lizard.rsi/bluesegment.png
     shaderId: unshaded
 
 - type: entity
@@ -184,8 +183,7 @@
     segmentId: greenRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: _HL/Lizard/lizard.rsi
-    textureState: greensegment
+    texturePath: _HL/Lizard/lizard.rsi/greensegment.png
     shaderId: unshaded
 
 - type: entity
@@ -255,8 +253,7 @@
     segmentId: greenRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: _HL/Lizard/lizard.rsi
-    textureState: pinksegment
+    texturePath: _HL/Lizard/lizard.rsi/pinksegment.png
     shaderId: unshaded
 
 - type: entity
@@ -326,8 +323,7 @@
     segmentId: greenRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: _HL/Lizard/lizard.rsi
-    textureState: segment
+    texturePath: _HL/Lizard/lizard.rsi/segment.png
     shaderId: unshaded
   - type: Stealth
     enabledOnDeath: false
@@ -403,8 +399,7 @@
     segmentId: greenRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: _HL/Lizard/lizard.rsi
-    textureState: backcyansegment
+    texturePath: _HL/Lizard/lizard.rsi/backcyansegment.png
     shaderId: unshaded
 
 - type: entity
@@ -474,8 +469,7 @@
     segmentId: RedRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: _HL/Lizard/lizard.rsi
-    textureState: redsegment
+    texturePath: _HL/Lizard/lizard.rsi/redsegment.png
     shaderId: unshaded
 
 - type: entity
@@ -545,8 +539,7 @@
     segmentId: RedRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: _HL/Lizard/lizard.rsi
-    textureState: trainsegment
+    texturePath: _HL/Lizard/lizard.rsi/trainsegment.png
     shaderId: unshaded
 
 - type: entity

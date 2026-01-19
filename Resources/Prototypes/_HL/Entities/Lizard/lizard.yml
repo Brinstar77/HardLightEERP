@@ -101,7 +101,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 1000 #Density is not final, adjust accordingly if the number of tail segments is reduced or increased
+        density: 10000 #Density is not final, adjust accordingly if the number of tail segments is reduced or increased
         restitution: 0.0
         mask:
         - MobMask
@@ -121,6 +121,9 @@
   parent: BlueRainLizard
   name: hostile Blue Rain Lizard
   components:
+  - type: HTN
+    rootTask:
+      task: LizardPullAttackCompound
   - type: NpcFactionMember
     factions:
     - AgressiveLizard
@@ -191,6 +194,9 @@
   parent: GreenRainLizard
   name: hostile Green Rain Lizard
   components:
+  - type: HTN
+    rootTask:
+      task: LizardPullAttackCompound
   - type: NpcFactionMember
     factions:
     - AgressiveLizard
@@ -261,6 +267,9 @@
   parent: PinkRainLizard
   name: hostile Pink Rain Lizard
   components:
+  - type: HTN
+    rootTask:
+      task: LizardPullAttackCompound
   - type: NpcFactionMember
     factions:
     - AgressiveLizard
@@ -337,6 +346,9 @@
   parent: WhiteRainLizard
   name: hostile White Rain Lizard
   components:
+  - type: HTN
+    rootTask:
+      task: LizardPullAttackCompound
   - type: NpcFactionMember
     factions:
     - AgressiveLizard
@@ -407,6 +419,9 @@
   parent: CyanRainLizard
   name: hostile Cyan Rain Lizard
   components:
+  - type: HTN
+    rootTask:
+      task: LizardPullAttackCompound
   - type: NpcFactionMember
     factions:
     - AgressiveLizard
@@ -477,6 +492,9 @@
   parent: RedRainLizard
   name: hostile Red Rain Lizard
   components:
+  - type: HTN
+    rootTask:
+      task: LizardPullAttackCompound
   - type: NpcFactionMember
     factions:
     - AgressiveLizard
@@ -547,6 +565,9 @@
   parent: TrainRainLizard
   name: hostile Train Lizard
   components:
+  - type: HTN
+    rootTask:
+      task: LizardPullAttackCompound
   - type: NpcFactionMember
     factions:
     - AgressiveLizard

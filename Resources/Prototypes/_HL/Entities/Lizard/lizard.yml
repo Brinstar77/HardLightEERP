@@ -5,6 +5,7 @@
   description: eats Wawas
   abstract: true
   components:
+  - type: LizardCombatSprite
   - type: Sprite
     sprite: _HL/Lizard/lizard.rsi
     state: lizardheadclosed
@@ -113,7 +114,7 @@
     staticScale: 0.6
     useTaperSystem: true
     taperOffset: 3
-    texturePath: /Textures/_HL/Lizard/lizard.rsi/bluesegment.png
+    texturePath: /Textures/_HL/Lizard/bluesegment.png
     shaderId: unshaded
 
 - type: entity
@@ -186,7 +187,7 @@
     segmentId: greenRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: /Textures/_HL/Lizard/lizard.rsi/greensegment.png
+    texturePath: /Textures/_HL/Lizard/greensegment.png
     shaderId: unshaded
 
 - type: entity
@@ -259,7 +260,7 @@
     segmentId: greenRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: /Textures/_HL/Lizard/lizard.rsi/pinksegment.png
+    texturePath: /Textures/_HL/Lizard/pinksegment.png
     shaderId: unshaded
 
 - type: entity
@@ -332,7 +333,7 @@
     segmentId: greenRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: /Textures/_HL/Lizard/lizard.rsi/segment.png
+    texturePath: /Textures/_HL/Lizard/segment.png
     shaderId: unshaded
   - type: Stealth
     enabledOnDeath: false
@@ -411,7 +412,7 @@
     segmentId: greenRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: /Textures/_HL/Lizard/lizard.rsi/backcyansegment.png
+    texturePath: /Textures/_HL/Lizard/backcyansegment.png
     shaderId: unshaded
 
 - type: entity
@@ -484,7 +485,7 @@
     segmentId: RedRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: /Textures/_HL/Lizard/lizard.rsi/redsegment.png
+    texturePath: /Textures/_HL/Lizard/redsegment.png
     shaderId: unshaded
 
 - type: entity
@@ -557,7 +558,7 @@
     segmentId: RedRainLizardSegment
     useTaperSystem: true
     taperOffset: 3
-    texturePath: /Textures/_HL/Lizard/lizard.rsi/trainsegment.png
+    texturePath: /Textures/_HL/Lizard/trainsegment.png
     shaderId: unshaded
 
 - type: entity

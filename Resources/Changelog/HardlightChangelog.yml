@@ -701,3 +701,15 @@ Entries:
         powerful that scales based on their blood amount.
   id: 73
   time: '2026-01-25T06:52:35.0000000+00:00'
+- author: rtasva
+  changes:
+    - type: Add
+      message: Added Civimed vendors and some new furniture to Silica
+    - type: Tweak
+      message: 'temporarily rerouted disposals on Silica to accommodate collision bug '
+    - type: Fix
+      message: >-
+        Fixed warden locker & sec dock airlocks on Silica not being correct
+        prototypes
+  id: 74
+  time: '2026-01-25T09:27:27.0000000+00:00'

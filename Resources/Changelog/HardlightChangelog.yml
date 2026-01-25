@@ -734,3 +734,15 @@ Entries:
         eat your tools.
   id: 77
   time: '2026-01-25T09:32:35.0000000+00:00'
+- author: fenndragon
+  changes:
+    - type: Add
+      message: Added even more optimizations
+    - type: Add
+      message: added more dragons
+    - type: Add
+      message: added fish evolution
+    - type: Add
+      message: added new carp forms
+  id: 78
+  time: '2026-01-25T09:41:33.0000000+00:00'

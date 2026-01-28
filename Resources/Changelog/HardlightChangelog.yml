@@ -774,3 +774,17 @@ Entries:
       message: Added the ability to opt out of paradox clone targetting.
   id: 82
   time: '2026-01-28T04:44:52.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Add
+      message: >-
+        Inert Nanites and active Nanites are now able to be created through
+        electrolysis.
+    - type: Add
+      message: Reagents within a cryostasis beaker now react through electrolysis.
+    - type: Tweak
+      message: >-
+        Synths now metabolize all reagents at 75% efficiency when dead, except
+        Nanites, which remain at 100% efficiency.
+  id: 83
+  time: '2026-01-28T04:46:13.0000000+00:00'

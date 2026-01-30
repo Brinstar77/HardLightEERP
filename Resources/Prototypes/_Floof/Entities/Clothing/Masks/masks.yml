@@ -78,7 +78,7 @@
 - type: entity
   parent: ClothingMaskMuffledBase
   id: ClothingMaskGasDroneMuffled
-  name: security gas mask
+  name: latex gas mask
   suffix: muffled
   description: A gas mask made of polished latex with a tinted visor. Comes with a hood to hide other features and an integrated gag that blocks your speech.
   components:
